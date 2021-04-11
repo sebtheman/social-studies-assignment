@@ -20,6 +20,23 @@
                 background-image: url(https://github.com/sebtheman/mechatronics-transistor-assignment/raw/master/docs/rainbow_rectangle.gif);
                 background-size: 3000px auto;
             }
+            .column {
+            float: left;
+            width: 33.33%;
+            padding: 5px;
+            }
+            /* Clearfix (clear floats) */
+            .row::after {
+            content: "";
+            clear: both;
+            display: table;
+            }
+            /* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+            @media screen and (max-width: 500px) {
+                .column {
+                width: 100%;
+                }
+            }
         </style>
     </head>
     <body>
@@ -32,6 +49,28 @@
             <button>
                 <a href="loading_screen_1.html">Go to next page</a>
             </button>
+        </div>
+        <br><br><br>
+        <div class="row">
+            <div class="column">
+                <figure>
+                    <img src="images/1200px-Star_of_David.svg.png" alt="Star of David" title="Star of David" width="100%" height="auto">
+                    <figcaption>
+                        <p>Jews were affected by the Nazis because they got killed.</p>
+                    </figcaption>
+                </figure>
+            </div>
+            <div class="column">
+                <figure>
+                    <img src="images/1200px-Flag_of_Germany.svg.webp" alt="German Flag" title="Germans" width="100%" height="auto">
+                    <figcaption>
+                        <p>Germans...</p>
+                    </figcaption>
+                </figure>
+            </div>
+            <div class="column">
+                <h1>Put thingy here for yes yay thanks</h1>
+            </div>
         </div>
     </body>
 </html>
