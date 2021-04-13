@@ -10,67 +10,81 @@
             gtag('js', new Date());
 
             gtag('config', 'G-LWM9BCD474');
-</script>
+        </script>
         <style>
-            .welcometext {
-                display: block;
-                margin-left: auto;
-                margin-right: auto;
+            body {
+                background-color: #00ff62;
             }
-            .welcometext span{
-                background-image: url(https://github.com/sebtheman/mechatronics-transistor-assignment/raw/master/docs/rainbow_rectangle.gif);
-                background-size: 3000px auto;
+            * {
+            box-sizing: border-box;
             }
+
             .column {
             float: left;
             width: 33.33%;
             padding: 5px;
             }
+
             /* Clearfix (clear floats) */
             .row::after {
             content: "";
             clear: both;
             display: table;
             }
+
             /* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
             @media screen and (max-width: 500px) {
                 .column {
-                width: 100%;
+                    width: 100%;
                 }
+            }
+            .welcometext {
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+                text-align: center;
+            }
+            .welcometext span {
+                background-image: url(https://github.com/sebtheman/mechatronics-transistor-assignment/raw/master/docs/rainbow_rectangle.gif);
+                color: black;
+                font-weight: bold;
+                font-size: 20pt;
+                border-style: solid;
+                border-color: #4b4952;
+                border-width: 10px;
+                border-radius: 10px;
+            }
+            .groupsaffected {
+                background-color: #585561;
+                border-color: #4b4952;
+                border-style: solid;
+                border-width: 10px;
+                border-radius: 10px;
             }
         </style>
     </head>
     <body>
+        <button>
+            <a href="https://sebtheman.github.io/social-studies-assignment/loading_screen_1.html">Press here to go to the next page</a>
+        </button>
         <div class="welcometext">
-            <center><h1><span>This redirect has been a success</span></h1></center>
-            <br>
-            <center><h1><span>This website is still a work in progress</span></h1></center>
-            <br>
-            <center><h1><span>Come back later when I have some content to show you lol</span></h1></center>
-            <button>
-                <a href="loading_screen_1.html">Go to next page</a>
-            </button>
+            <p><span>Groups that got effected by Nazis</span></p>
+            <br><br>
         </div>
-        <br><br><br>
-        <div class="row">
-            <div class="column">
-                <figure>
-                    <img src="images/1200px-Star_of_David.svg.png" alt="Star of David" title="Star of David" width="100%" height="auto">
-                    <figcaption>
-                        <p>Jews were affected by the Nazis because they got killed.</p>
-                    </figcaption>
-                </figure>
-            </div>
-            <div class="column">
-                <figure>
-                    <img src="images/1200px-Flag_of_Germany.svg.webp" alt="German Flag" title="Germans" width="100%" height="auto">
-                    <figcaption>
-                        <p>Germans...</p>
-                    </figcaption>
-                </figure>
-            </div>
-            <div class="column">
-                <h1>Put thingy here for yes yay thanks</h1>
+        <div class="groupsaffected">
+            <div class="row">
+                <div class="column">
+                    <center><img src="images/1200px-Star_of_David.svg.png" alt="Star of David" title="Jews" style="width:50%">
+                    <p>Jews were affected by the Nazis because they got killed.</p></center>
+                </div>
+                <div class="column">
+                    <img src="images/1200px-Flag_of_Germany.svg.webp" alt="German Flag" title="Germans" style="width:100%">
+                    <center><p>Germans...</p></center>
+                </div>
+                <div class="column">
+                    <img src="images/girl-162-removebg-preview.png" alt="Girl" title="Women" style="width:100%">
+                    <center><p>Put thingy here for yay yes thanks</p></center>
+                </div>
             </div>
         </div>
     </body>
