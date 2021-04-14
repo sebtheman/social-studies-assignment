@@ -16,30 +16,33 @@
                 background-color: #00ff62;
             }
             * {
-            box-sizing: border-box;
+                box-sizing: border-box;
             }
 
             .jewcolumn {
-            float: left;
-            width: 33.33%;
-            padding: 5px;
+                float: left;
+                width: 33.33%;
+                padding: 5px;
+                height: 100%;
             }
             .germancolumn {
-            float: left;
-            width: 33.33%;
-            padding: 5px;
+                float: left;
+                width: 33.33%;
+                padding: 5px;
+                height: 100%;
             }
             .womencolumn {
-            float: left;
-            width: 33.33%;
-            padding: 5px;
+                float: left;
+                width: 33.33%;
+                padding: 5px;
+                height: 100%;
             }
 
             /* Clearfix (clear floats) */
             .row::after {
-            content: "";
-            clear: both;
-            display: table;
+                content: "";
+                clear: both;
+                display: table;
             }
 
             /* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
@@ -77,6 +80,7 @@
                 border-width: 10px;
                 border-radius: 10px;
                 font-size: 15pt;
+                display: grid;
             }
             .nextpagebutton {
                 display: block;
