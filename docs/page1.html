@@ -19,7 +19,17 @@
             box-sizing: border-box;
             }
 
-            .column {
+            .jewcolumn {
+            float: left;
+            width: 33.33%;
+            padding: 5px;
+            }
+            .germancolumn {
+            float: left;
+            width: 33.33%;
+            padding: 5px;
+            }
+            .womencolumn {
             float: left;
             width: 33.33%;
             padding: 5px;
@@ -34,7 +44,13 @@
 
             /* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
             @media screen and (max-width: 500px) {
-                .column {
+                .jewcolumn {
+                    width: 100%;
+                }
+                .germancolumn {
+                    width: 100%;
+                }
+                .womencolumn {
                     width: 100%;
                 }
             }
@@ -61,31 +77,79 @@
                 border-width: 10px;
                 border-radius: 10px;
             }
+            .nextpagebutton {
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+                text-align: center;
+            }
+            #nextpagebutton {
+                background-color: #6f6c77;
+                color: black;
+                font-weight: bold;
+                font-size: 20pt;
+                border-style: solid;
+                border-color: #535258;
+                border-width: 10px;
+                border-radius: 10px;
+            }
+            #nextpagebutton:hover {
+                background-color: aqua;
+                border-color: red;
+            }
+            a:link {
+                color: greenyellow;
+                font-weight: bold;
+            }
+            a:visited {
+                color: greenyellow;
+                font-weight: bold;
+            }
+            .nextpagebutton:hover a:link {
+                color: black;
+                font-weight: bold;
+            }
+            .nextpagebutton:hover a:visited {
+                color: black;
+                font-weight: bold;
+            }
+            .jewcolumn:hover {
+                background-color: white;
+            }
+            .germancolumn:hover {
+                background-color: white;
+            }
+            .womencolumn:hover {
+                background-color: white;
+            }
         </style>
     </head>
     <body>
-        <button>
-            <a href="https://sebtheman.github.io/social-studies-assignment/loading_screen_1.html">Press here to go to the next page</a>
-        </button>
         <div class="welcometext">
             <p><span>Groups that got effected by Nazis</span></p>
             <br><br>
         </div>
         <div class="groupsaffected">
             <div class="row">
-                <div class="column">
+                <div class="jewcolumn">
                     <center><img src="images/1200px-Star_of_David.svg.png" alt="Star of David" title="Jews" style="width:50%">
                     <p>Jews were affected by the Nazis because they got killed.</p></center>
                 </div>
-                <div class="column">
+                <div class="germancolumn">
                     <img src="images/1200px-Flag_of_Germany.svg.webp" alt="German Flag" title="Germans" style="width:100%">
                     <center><p>Germans...</p></center>
                 </div>
-                <div class="column">
+                <div class="womencolumn">
                     <img src="images/girl-162-removebg-preview.png" alt="Girl" title="Women" style="width:100%">
                     <center><p>Put thingy here for yay yes thanks</p></center>
                 </div>
             </div>
+        </div>
+        <br><br><br><br><br>
+        <div class="nextpagebutton">
+            <button id="nextpagebutton">
+                <a href="https://sebtheman.github.io/social-studies-assignment/loading_screen_1.html">Press here to go to the next page</a>
+            </button>
         </div>
     </body>
 </html>
