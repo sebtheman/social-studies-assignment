@@ -2,8 +2,278 @@
 <html>
     <head>
         <link rel="shortcut icon" type="image/jpg" href="https://github.com/sebtheman/memes-website/raw/master/docs/images/pepe.jpeg"/>
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-LWM9BCD474"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-LWM9BCD474');
+        </script>
+        <style>
+            body {
+                background-color: #00ff62;
+            }
+            * {
+                box-sizing: border-box;
+            }
+
+            .jewcolumn {
+                float: left;
+                width: 33.33%;
+                padding: 5px;
+                height: inherit;
+                flex: 1;
+            }
+            .germancolumn {
+                float: left;
+                width: 33.33%;
+                padding: 5px;
+                height: inherit;
+                flex: 1;
+            }
+            .womencolumn {
+                float: left;
+                width: 33.33%;
+                padding: 5px;
+                height: inherit;
+                flex: 1;
+            }
+
+            /* Clearfix (clear floats) */
+            .row::after {
+                content: "";
+                clear: both;
+                display: table;
+            }
+
+            /* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+            @media screen and (max-width: 750px) {
+                .jewcolumn {
+                    width: 100%;
+                }
+                .germancolumn {
+                    width: 100%;
+                }
+                .womencolumn {
+                    width: 100%;
+                }
+                .groupsaffected {
+                    width: 100%;
+                }
+            }
+            #welcometext {
+                background-image: url(https://github.com/sebtheman/mechatronics-transistor-assignment/raw/master/docs/rainbow_rectangle.gif);
+                color: rgb(0, 0, 0);
+                font-weight: bold;
+                font-size: 20pt;
+                border-style: solid;
+                border-color: #4b4952;
+                border-width: 10px;
+                border-radius: 10px;
+                float: center;
+            }
+            #toppreviousbutton {
+                background-image: url(https://github.com/sebtheman/mechatronics-transistor-assignment/raw/master/docs/rainbow_rectangle.gif);
+                color: black;
+                font-weight: bold;
+                font-size: 20pt;
+                border-style: solid;
+                border-color: #4b4952;
+                border-width: 10px;
+                border-radius: 10px;
+                float: left;
+            }
+            #topnextbutton {
+                background-image: url(https://github.com/sebtheman/mechatronics-transistor-assignment/raw/master/docs/rainbow_rectangle.gif);
+                color: black;
+                font-weight: bold;
+                font-size: 20pt;
+                border-style: solid;
+                border-color: #4b4952;
+                border-width: 10px;
+                border-radius: 10px;
+                float: right;
+            }
+            .groupsaffected {
+                background-color: #7d7c83;
+                border-color: #4b4952;
+                border-style: solid;
+                border-width: 10px;
+                border-radius: 10px;
+                font-size: 15pt;
+                display: flex;
+                flex-direction: column;
+                height: auto;
+            }
+            .nextpagebutton {
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+                text-align: center;
+            }
+            #nextpagebutton {
+                background-color: #6f6c77;
+                color: black;
+                font-weight: bold;
+                font-size: 20pt;
+                border-style: solid;
+                border-color: #535258;
+                border-width: 10px;
+                border-radius: 10px;
+                float: center;
+            }
+            #nextpagebutton:hover {
+                background-color: aqua;
+                border-color: red;
+            }
+            a:link {
+                color: greenyellow;
+                font-weight: bold;
+            }
+            a:visited {
+                color: greenyellow;
+                font-weight: bold;
+            }
+            #nextpagebutton:hover a:link {
+                color: black;
+                font-weight: bold;
+            }
+            #nextpagebutton:hover a:visited {
+                color: black;
+                font-weight: bold;
+            }
+            .jewcolumn:hover {
+
+            }
+            .germancolumn:hover {
+
+            }
+            .womencolumn:hover {
+
+            }
+            .invisible {
+                visibility: hidden;
+                position: absolute;
+                top: -9999px;
+            }
+            .visible {
+                visibility: visible;
+                position: static;
+            }
+            .topbuttonscontainerdiv {
+                text-align: center;
+            }
+            .topbuttonscontainerdiv a:link {
+                color: black;
+            }
+            .topbuttonscontainerdiv a:visited {
+                color: black;
+            }
+            #bottompreviousbutton {
+                background-color: #6f6c77;
+                color: black;
+                font-weight: bold;
+                font-size: 20pt;
+                border-style: solid;
+                border-color: #4b4952;
+                border-width: 10px;
+                border-radius: 10px;
+                float: center;
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            #bottompreviousbutton:hover {
+                background-color: aqua;
+                border-color: red;
+            }
+            #bottompreviousbutton:hover a:link {
+                color: black;
+                font-weight: bold;
+            }
+            #bottompreviousbutton:hover a:visited {
+                color: black;
+                font-weight: bold;
+            }
+        </style>
+        <script>
+            function topPageButtonsFunction() {
+                var w=window;
+                var d=document;
+                var e=d.documentElement;
+                var g=d.getElementsByTagName('body')[0];
+                var x=w.innerWidth||e.clientWidth||g.clientWidth;
+                var targetWidth = 986;
+                if ( x >= targetWidth) {     
+                //javascript for screens wider than or equal to 1040 here
+                var x = document.getElementById("toppreviousbutton");
+                x.className = "visible";
+                var x = document.getElementById("topnextbutton");
+                x.className = "visible";
+                var x = document.getElementById("nextpagebutton");
+                x.className = "invisible";
+                var x = document.getElementById("bottompreviousbutton");
+                x.className = "invisible";
+                }
+                else {
+                //javascript for screens smaller than 1040 here
+                var x = document.getElementById("toppreviousbutton");
+                x.className = "invisible";
+                var x = document.getElementById("topnextbutton");
+                x.className = "invisible";
+                var x = document.getElementById("nextpagebutton");
+                x.className = "visible";
+                var x = document.getElementById("bottompreviousbutton");
+                x.className = "visible";
+                }  
+
+                var heightofgroupsaffecteddiv = document.getElementById('groupsaffected').style.getPropertyValue('height');
+                document.getElementById("jewcolumn").style.height = heightofgroupsaffecteddiv;
+                document.getElementById("germancolumn").style.height = heightofgroupsaffecteddiv;
+                document.getElementById("womencolumn").style.height = heightofgroupsaffecteddiv;
+            }
+        </script>
     </head>
-    <body>
-        <h1>Redirect was a success!</h1>
+    <body onresize="topPageButtonsFunction()" onload="topPageButtonsFunction()">
+        <div class="topbuttonscontainerdiv">
+            <button id="toppreviousbutton" class="invisible">
+                <a href="https://sebtheman.github.io"><span>Go to the homepage</span></a>
+            </button>
+            <span id="welcometext">Groups that got effected by Nazis</span>
+            <button id="topnextbutton" class="invisible">
+                <a href="https://sebtheman.github.io/social-studies-assignment/loading_screen_1"><span>Go to the next page</span></a>
+            </button>
+        </div>
+        <br><br>
+        <div class="groupsaffected" id="groupsaffected">
+            <div class="row">
+                <div class="jewcolumn" id="jewcolumn">
+                    <center><img src="images/1200px-Star_of_David.svg.png" alt="Star of David" title="Jews" style="width:50%">
+                    <p>Jews were affected heavily by the Nazis being in power. Hitler believed that Jews were a burden to society, and that true Germans (Aaryans) were way better than Jews. Jews had laws put in place so then life was harder for them, and then eventually the Holocaust happened, killing about 6 million Jews.</p></center>
+                </div>
+                <div class="germancolumn" id="jewcolumn">
+                    <img src="images/1200px-Flag_of_Germany.svg.webp" alt="German Flag" title="Germans" style="width:100%">
+                    <center><p>2 million Germans died from World War II, so millions of families had to go through the death of loved ones. Also men 16 - 60 were conscripted into the war, and some people didn't want that to happen so that had a huge effect on their mental health.</p></center>
+                </div>
+                <div class="womencolumn" id="womencolumn">
+                    <img src="images/girl-162-removebg-preview.png" alt="Girl" title="Women" style="width:100%">
+                    <center><p>Women got affected because they didn't have any freedom. They were forced to have children so then Germany could have more boys so they could participate in the war.</p></center>
+                </div>
+            </div>
+        </div>
+        <br><br>
+
+            <div class="nextpagebutton">
+                <button id="nextpagebutton" class="invisible">
+                    <a href="https://sebtheman.github.io/social-studies-assignment/loading_screen_1.html">Click here to go to the next page</a>
+                </button>
+            </div>
+            <br>
+            <button id="bottompreviousbutton" class="invisible">
+                <a href="https://sebtheman.github.io/social-studies-assignment/loading_screen_1.html">Click here to go to the homepage</a>
+            </button>
+        
     </body>
 </html>
