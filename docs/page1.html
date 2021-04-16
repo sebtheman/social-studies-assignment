@@ -164,59 +164,37 @@
             }
         </style>
         <script>
-            function topNextButtonFunction() {
-                var w=window;
-                var d=document;
-                var e=d.documentElement;
-                var g=d.getElementsByTagName('body')[0];
-                var x=w.innerWidth||e.clientWidth||g.clientWidth;
-                var targetWidth = 1040;
-                if ( x >= targetWidth) {     
-                //javascript for screens wider than or equal to 1040 here
-                var x = document.getElementById("topnextbutton");
-                x.className = "visible";
-                }
-                else {
-                //javascript for screens smaller than 1040 here
-                var x = document.getElementById("topnextbutton");
-                x.className = "invisible";
-                }  
-            }
-        </script>
-        <script>
-            function topPreviousButtonFunction() {
-                var w=window;
-                var d=document;
-                var e=d.documentElement;
-                var g=d.getElementsByTagName('body')[0];
-                var x=w.innerWidth||e.clientWidth||g.clientWidth;
-                var targetWidth = 1040;
-                if ( x >= targetWidth) {     
-                //javascript for screens wider than or equal to 1040 here
-                var x = document.getElementById("toppreviousbutton");
-                x.className = "visible";
-                }
-                else {
-                //javascript for screens smaller than 1040 here
-                var x = document.getElementById("toppreviousbutton");
-                x.className = "invisible";
-                }  
-            }
-        </script>
-        <script>
             function topPageButtonsFunction() {
-                topPreviousButtonFunction();
-                topNextButtonFunction();
+                var w=window;
+                var d=document;
+                var e=d.documentElement;
+                var g=d.getElementsByTagName('body')[0];
+                var x=w.innerWidth||e.clientWidth||g.clientWidth;
+                var targetWidth = 1040;
+                if ( x >= targetWidth) {     
+                //javascript for screens wider than or equal to 1040 here
+                var x = document.getElementById("toppreviousbutton");
+                x.className = "visible";
+                var x = document.getElementById("topnextbutton");
+                x.className = "visible";
+                }
+                else {
+                //javascript for screens smaller than 1040 here
+                var x = document.getElementById("toppreviousbutton");
+                x.className = "invisible";
+                var x = document.getElementById("topnextbutton");
+                x.className = "invisible";
+                }  
             }
         </script>
     </head>
-    <body onresize="topPageButtonsFunction()">
+    <body onresize="topPageButtonsFunction()" onload="topPageButtonsFunction()">
         <div class="topbuttonscontainerdiv">
-            <button id="toppreviousbutton">
+            <button id="toppreviousbutton" class="invisible">
                 <a href="https://sebtheman.github.io"><span>Go to the previous page</span></a>
             </button>
             <span id="welcometext">Groups that got effected by Nazis</span>
-            <button id="topnextbutton">
+            <button id="topnextbutton" class="invisible">
                 <a href="https://sebtheman.github.io/social-studies-assignment/loading_screen_1"><span>Go to the next page</span></a>
             </button>
         </div>
