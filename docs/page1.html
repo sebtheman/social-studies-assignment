@@ -163,6 +163,16 @@
                 color: black;
             }
         </style>
+        <script>
+            function topButtonsFunction() {
+              var x = document.getElementById("toppreviousbutton");
+              if (x.className === "navbar") {
+                x.className += " responsive";
+              } else {
+                x.className = "navbar";
+              }
+            }
+        </script>
     </head>
     <body>
         <div class="topbuttonscontainerdiv">
