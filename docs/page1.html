@@ -23,19 +23,22 @@
                 float: left;
                 width: 33.33%;
                 padding: 5px;
-                height: 100%;
+                height: inherit;
+                flex: 1;
             }
             .germancolumn {
                 float: left;
                 width: 33.33%;
                 padding: 5px;
-                height: 100%;
+                height: inherit;
+                flex: 1;
             }
             .womencolumn {
                 float: left;
                 width: 33.33%;
                 padding: 5px;
-                height: 100%;
+                height: inherit;
+                flex: 1;
             }
 
             /* Clearfix (clear floats) */
@@ -54,6 +57,9 @@
                     width: 100%;
                 }
                 .womencolumn {
+                    width: 100%;
+                }
+                .groupsaffected {
                     width: 100%;
                 }
             }
@@ -97,7 +103,9 @@
                 border-width: 10px;
                 border-radius: 10px;
                 font-size: 15pt;
-                display: grid;
+                display: flex;
+                flex-direction: column;
+                height: auto;
             }
             .nextpagebutton {
                 display: block;
@@ -114,6 +122,7 @@
                 border-color: #535258;
                 border-width: 10px;
                 border-radius: 10px;
+                float: center;
             }
             #nextpagebutton:hover {
                 background-color: aqua;
@@ -136,13 +145,13 @@
                 font-weight: bold;
             }
             .jewcolumn:hover {
-                background-color: white;
+
             }
             .germancolumn:hover {
-                background-color: white;
+
             }
             .womencolumn:hover {
-                background-color: white;
+
             }
             .invisible {
                 visibility: hidden;
@@ -162,6 +171,32 @@
             .topbuttonscontainerdiv a:visited {
                 color: black;
             }
+            #bottompreviousbutton {
+                background-color: #6f6c77;
+                color: black;
+                font-weight: bold;
+                font-size: 20pt;
+                border-style: solid;
+                border-color: #4b4952;
+                border-width: 10px;
+                border-radius: 10px;
+                float: center;
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            #bottompreviousbutton:hover {
+                background-color: aqua;
+                border-color: red;
+            }
+            #bottompreviousbutton:hover a:link {
+                color: black;
+                font-weight: bold;
+            }
+            #bottompreviousbutton:hover a:visited {
+                color: black;
+                font-weight: bold;
+            }
         </style>
         <script>
             function topPageButtonsFunction() {
@@ -170,13 +205,17 @@
                 var e=d.documentElement;
                 var g=d.getElementsByTagName('body')[0];
                 var x=w.innerWidth||e.clientWidth||g.clientWidth;
-                var targetWidth = 1040;
+                var targetWidth = 986;
                 if ( x >= targetWidth) {     
                 //javascript for screens wider than or equal to 1040 here
                 var x = document.getElementById("toppreviousbutton");
                 x.className = "visible";
                 var x = document.getElementById("topnextbutton");
                 x.className = "visible";
+                var x = document.getElementById("nextpagebutton");
+                x.className = "invisible";
+                var x = document.getElementById("bottompreviousbutton");
+                x.className = "invisible";
                 }
                 else {
                 //javascript for screens smaller than 1040 here
@@ -184,14 +223,23 @@
                 x.className = "invisible";
                 var x = document.getElementById("topnextbutton");
                 x.className = "invisible";
+                var x = document.getElementById("nextpagebutton");
+                x.className = "visible";
+                var x = document.getElementById("bottompreviousbutton");
+                x.className = "visible";
                 }  
+
+                var heightofgroupsaffecteddiv = document.getElementById('groupsaffected').style.getPropertyValue('height');
+                document.getElementById("jewcolumn").style.height = heightofgroupsaffecteddiv;
+                document.getElementById("germancolumn").style.height = heightofgroupsaffecteddiv;
+                document.getElementById("womencolumn").style.height = heightofgroupsaffecteddiv;
             }
         </script>
     </head>
     <body onresize="topPageButtonsFunction()" onload="topPageButtonsFunction()">
         <div class="topbuttonscontainerdiv">
             <button id="toppreviousbutton" class="invisible">
-                <a href="https://sebtheman.github.io"><span>Go to the previous page</span></a>
+                <a href="https://sebtheman.github.io"><span>Go to the homepage</span></a>
             </button>
             <span id="welcometext">Groups that got effected by Nazis</span>
             <button id="topnextbutton" class="invisible">
@@ -199,27 +247,33 @@
             </button>
         </div>
         <br><br>
-        <div class="groupsaffected">
+        <div class="groupsaffected" id="groupsaffected">
             <div class="row">
-                <div class="jewcolumn">
+                <div class="jewcolumn" id="jewcolumn">
                     <center><img src="images/1200px-Star_of_David.svg.png" alt="Star of David" title="Jews" style="width:50%">
                     <p>Jews were affected heavily by the Nazis being in power. Hitler believed that Jews were a burden to society, and that true Germans (Aaryans) were way better than Jews. Jews had laws put in place so then life was harder for them, and then eventually the Holocaust happened, killing about 6 million Jews.</p></center>
                 </div>
-                <div class="germancolumn">
+                <div class="germancolumn" id="jewcolumn">
                     <img src="images/1200px-Flag_of_Germany.svg.webp" alt="German Flag" title="Germans" style="width:100%">
                     <center><p>2 million Germans died from World War II, so millions of families had to go through the death of loved ones. Also men 16 - 60 were conscripted into the war, and some people didn't want that to happen so that had a huge effect on their mental health.</p></center>
                 </div>
-                <div class="womencolumn">
+                <div class="womencolumn" id="womencolumn">
                     <img src="images/girl-162-removebg-preview.png" alt="Girl" title="Women" style="width:100%">
                     <center><p>Women got affected because they didn't have any freedom. They were forced to have children so then Germany could have more boys so they could participate in the war.</p></center>
                 </div>
             </div>
         </div>
         <br><br>
-        <div class="nextpagebutton">
-            <button id="nextpagebutton">
-                <a href="https://sebtheman.github.io/social-studies-assignment/loading_screen_1.html">Press here to go to the next page</a>
+
+            <div class="nextpagebutton">
+                <button id="nextpagebutton" class="invisible">
+                    <a href="https://sebtheman.github.io/social-studies-assignment/loading_screen_1.html">Click here to go to the next page</a>
+                </button>
+            </div>
+            <br>
+            <button id="bottompreviousbutton" class="invisible">
+                <a href="https://sebtheman.github.io/social-studies-assignment/loading_screen_1.html">Click here to go to the homepage</a>
             </button>
-        </div>
+        
     </body>
 </html>
