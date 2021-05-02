@@ -255,6 +255,54 @@
                 letter-spacing: 3px;
                 color:black;
             }
+            #causesonetext_small {
+                border-color: #4b4952;
+                border-style: solid;
+                border-width: 10px;
+                border-radius: 10px;
+                background-color: #00ff62;
+                text-align: center;
+                font-weight: bold;
+                font-size: 14pt;
+                letter-spacing: 3px;
+                color:black;
+            }
+            #effectsonetext_small {
+                border-color: #4b4952;
+                border-style: solid;
+                border-width: 10px;
+                border-radius: 10px;
+                background-color: #00ff62;
+                text-align: center;
+                font-weight: bold;
+                font-size: 14pt;
+                letter-spacing: 3px;
+                color:black;
+            }
+            #causestwotext_small {
+                border-color: #4b4952;
+                border-style: solid;
+                border-width: 10px;
+                border-radius: 10px;
+                background-color: #00ff62;
+                text-align: center;
+                font-weight: bold;
+                font-size: 14pt;
+                letter-spacing: 3px;
+                color:black;
+            }
+            #effectstwotext_small {
+                border-color: #4b4952;
+                border-style: solid;
+                border-width: 10px;
+                border-radius: 10px;
+                background-color: #00ff62;
+                text-align: center;
+                font-weight: bold;
+                font-size: 14pt;
+                letter-spacing: 3px;
+                color:black;
+            }
         </style>
         <script>
             function topPageButtonsFunction() {
@@ -266,6 +314,7 @@
                 var windowSize = x;
                 var targetWidth = 1232;
                 var targetWidthTwo = 614;
+                var targetWidthThree = 750;
                 if ( x >= targetWidth) {     
                 //javascript for screens wider than or equal to 1232 here
                 var x = document.getElementById("toppreviousbutton");
@@ -302,6 +351,43 @@
                     x.className = "visible";
                 }
 
+                if (windowSize >= targetWidthThree) {
+                    var x = document.getElementById("causesonetext")
+                    x.className = "visible";
+                    var x = document.getElementById("causestwotext");
+                    x.className = "visible";
+                    var x = document.getElementById("effectsonetext");
+                    x.className = "visible";
+                    var x = document.getElementById("effectstwotext");
+                    x.className = "visible";
+                    var x = document.getElementById("causesonetext_small")
+                    x.className = "invisible";
+                    var x = document.getElementById("causestwotext_small");
+                    x.className = "invisible";
+                    var x = document.getElementById("effectsonetext_small");
+                    x.className = "invisible";
+                    var x = document.getElementById("effectstwotext_small");
+                    x.className = "invisible";
+                }
+                else {
+                    var x = document.getElementById("causesonetext")
+                    x.className = "invisible";
+                    var x = document.getElementById("causestwotext");
+                    x.className = "invisible";
+                    var x = document.getElementById("effectsonetext");
+                    x.className = "invisible";
+                    var x = document.getElementById("effectstwotext");
+                    x.className = "invisible";
+                    var x = document.getElementById("causesonetext_small")
+                    x.className = "visible";
+                    var x = document.getElementById("causestwotext_small");
+                    x.className = "visible";
+                    var x = document.getElementById("effectsonetext_small");
+                    x.className = "visible";
+                    var x = document.getElementById("effectstwotext_small");
+                    x.className = "visible";
+                }
+
                 var heightofgroupsaffecteddiv = document.getElementById('groupsaffected').style.getPropertyValue('height');
                 document.getElementById("jewcolumn").style.height = heightofgroupsaffecteddiv;
                 document.getElementById("germancolumn").style.height = heightofgroupsaffecteddiv;
@@ -321,7 +407,8 @@
             </button>
         </div>
         <br><br><br>
-        <center><span id="causesonetext">Causes</span></center>
+        <center><span id="causesonetext" class="invisible">1st cause of the Nazi Party gaining power</span></center>
+        <center><span id="causesonetext_small" class="invisible">1st cause of the Nazi Party gaining power</span></center>
         <div class="groupsaffected" id="groupsaffected">
             <div class="row">
                 <div class="jewcolumn" id="jewcolumn">
@@ -339,7 +426,8 @@
             </div>
         </div>
         <br><br>
-        <center><span id="causestwotext">Causes two</span></center>
+        <center><span id="causestwotext">2nd cause of Nazi Party gaining power</span></center>
+        <center><span id="causestwotext_small">2nd cause of Nazi Party gaining power</span></center>
         <div class="groupsaffected" id="groupsaffected">
             <div class="row">
                 <div class="jewcolumn" id="jewcolumn">
@@ -357,7 +445,8 @@
             </div>
         </div>
         <br><br>
-        <center><span id="effectsonetext">Effects one</span></center>
+        <center><span id="effectsonetext">1st effect of the Nazi Party gaining power</span></center>
+        <center><span id="effectsonetext_small">1st effect of the Nazi Party gaining power</span></center>
         <div class="groupsaffected" id="groupsaffected">
             <div class="row">
                 <div class="jewcolumn" id="jewcolumn">
@@ -375,7 +464,8 @@
             </div>
         </div>
         <br><br>
-        <center><span id="effectstwotext">Effects two</span></center>
+        <center><span id="effectstwotext">2nd effect of the Nazi Party gaining power</span></center>
+        <center><span id="effectstwotext_small">2nd effect of the Nazi Party gaining power</span></center>
         <div class="groupsaffected" id="groupsaffected">
             <div class="row">
                 <div class="jewcolumn" id="jewcolumn">
