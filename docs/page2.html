@@ -318,6 +318,19 @@
             .h1headings {
                 text-align: center;
             }
+            /* Three image containers (use 25% for four, and 50% for two, etc) */
+            .column {
+                float: left;
+                width: 50%;
+                padding: 5px;
+            }
+
+            /* Clear floats after image containers */
+            .row::after {
+                content: "";
+                clear: both;
+                display: table;
+            }
         </style>
         <script>
             function topPageButtonsFunction() {
@@ -429,6 +442,7 @@
             <h1 class="h1headings">Hitler got into government after the Beer Hall Putsch trials because of his popularity gained from it</h1>
             <p>Hitler tried to overthrow the government in 1923. He failed his attempt and as a result he got thrown in jail for 5 years. When Hitler got tried in the Beer Hall Putsch, he talked incredibly well and made convincing points.</p>
             <p>From talking well he became very popular. Slowly after each and every election, Hitler got more and more votes. Then in 1932 he got 36% of the votes, and he lost to General Von Hindenburg. A year later advisors and businessmen convinced General Von Hindenburg to appoint Hitler as chancelor so then Hitler's popularity and fame will give an advantage to both of them.</p>
+            <center><img src="images/law hammer.png" width="200px" height="auto"></center>
         </div>
         <br><br>
         <center><span id="causestwotext" class="invisible">2nd cause of Nazi Party gaining power</span></center>
@@ -436,6 +450,10 @@
         <div class="groupsaffected" id="groupsaffected">
             <h1 class="h1headings">Government building burnt down....</h1>
             <p>The Reichstag fire was started by Marinus van der Lubbe. Because of everything that was going on at the time, the day after the Reichstag fire, Hitler was granted emergency powers. Within a few months, freedom of the press was no more and antisemetism laws were introduced.</p>
+            <center>
+            <img src="images/minecraft fire.gif" width="200px" height="auto">
+            <img src="images/Reichstag.jpeg" width="300px" height="auto">
+            </center>
         </div>
         <br><br>
         <center><span id="effectsonetext" class="invisible">1st effect of the Nazi Party gaining power</span></center>
@@ -452,12 +470,13 @@
             <div class="row">
                 <h1 class="h1headings">Holocaust</h1>
                 <p>Write stuff here</p>
+                <center><img src="images/minecraft fire.gif" width="100px" height="auto">
                 <div class="stevevideocontainer">
-                    <center><video autoplay muted loop width="300px" class="stevevideo">
+                    <video autoplay muted loop width="300px" class="stevevideo">
                         <source src="videos/crazy_steves_cropped.mov" type="video/mp4">
                     </video></center>
                 </div>
-                <p>Hitler put many Jews into concentration camps, or "death camps", and used gas to suffocate them. They were very crowded, and they lied about having a shower (contionue writing later, the bell is about to ring)</p>
+                <p>Hitler put many Jews into concentration camps, or "death camps", and used gas to suffocate them. They got the Jews to go into the gas chamber by lying and saying that the Jews can have a nice warm shower. They filled the chambers to their max, and when they were full, they shut the door and let the gas into the chamber to kill everyone inside.</p>
                 <div class="stevevideocontainer">
                     <center><video autoplay muted loop width="300px" class="stevevideo">
                         <source src="videos/concentration_camp_video_cropped.mov" type="video/mp4">
