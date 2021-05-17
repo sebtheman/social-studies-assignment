@@ -1,12 +1,512 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <meta name="author" content="Sebastian Webster">
+        <title>Seb's SST Assignment</title>
+        <link rel="shortcut icon" type="image/jpg" href="https://github.com/sebtheman/memes-website/raw/master/docs/images/pepe.jpeg"/>
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-LWM9BCD474"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
 
+            gtag('config', 'G-LWM9BCD474');
+        </script>
+        <style>
+            body {
+                background-color: #00ff62;
+            }
+            * {
+                box-sizing: border-box;
+            }
+
+            .jewcolumn {
+                float: left;
+                width: 33.33%;
+                padding: 5px;
+                height: inherit;
+                flex: 1;
+            }
+            .germancolumn {
+                float: left;
+                width: 33.33%;
+                padding: 5px;
+                height: inherit;
+                flex: 1;
+            }
+            .womencolumn {
+                float: left;
+                width: 33.33%;
+                padding: 5px;
+                height: inherit;
+                flex: 1;
+            }
+
+            /* Three image containers (use 25% for four, and 50% for two, etc) */
+            .yellowcolumn {
+                float: left;
+                width: 10%;
+                padding: 15px;
+                background-color: yellow;
+            }
+            .blackcolumn {
+                float: left;
+                width: 10%;
+                padding: 15px;
+                background-color: black;
+            }
+
+            /* Clearfix (clear floats) */
+            .row::after {
+                content: "";
+                clear: both;
+                display: table;
+            }
+
+            /* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+            @media screen and (max-width: 750px) {
+                .jewcolumn {
+                    width: 100%;
+                }
+                .germancolumn {
+                    width: 100%;
+                }
+                .womencolumn {
+                    width: 100%;
+                }
+                .groupsaffected {
+                    width: 100%;
+                }
+            }
+            #bigwelcometext {
+                background-image: url(https://github.com/sebtheman/mechatronics-transistor-assignment/raw/master/docs/rainbow_rectangle.gif);
+                color: rgb(0, 0, 0);
+                font-weight: bold;
+                font-size: 20pt;
+                border-style: solid;
+                border-color: #4b4952;
+                border-width: 10px;
+                border-radius: 10px;
+                float: center;
+            }
+            #toppreviousbutton {
+                background-image: url(https://github.com/sebtheman/mechatronics-transistor-assignment/raw/master/docs/rainbow_rectangle.gif);
+                color: black;
+                font-weight: bold;
+                font-size: 20pt;
+                border-style: solid;
+                border-color: #4b4952;
+                border-width: 10px;
+                border-radius: 10px;
+                float: left;
+            }
+            #topnextbutton {
+                background-image: url(https://github.com/sebtheman/mechatronics-transistor-assignment/raw/master/docs/rainbow_rectangle.gif);
+                color: black;
+                font-weight: bold;
+                font-size: 20pt;
+                border-style: solid;
+                border-color: #4b4952;
+                border-width: 10px;
+                border-radius: 10px;
+                float: right;
+            }
+            .groupsaffected {
+                background-color: #7d7c83;
+                border-color: #4b4952;
+                border-style: solid;
+                border-width: 10px;
+                border-radius: 10px;
+                font-size: 15pt;
+                display: flex;
+                flex-direction: column;
+                height: auto;
+            }
+            .nextpagebutton {
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+                text-align: center;
+            }
+            #nextpagebutton {
+                background-color: #6f6c77;
+                color: black;
+                font-weight: bold;
+                font-size: 18pt;
+                border-style: solid;
+                border-color: #535258;
+                border-width: 10px;
+                border-radius: 10px;
+                float: center;
+            }
+            #nextpagebutton:hover {
+                background-color: aqua;
+                border-color: red;
+            }
+            a:link {
+                color: greenyellow;
+                font-weight: bold;
+            }
+            a:visited {
+                color: greenyellow;
+                font-weight: bold;
+            }
+            #nextpagebutton:hover a:link {
+                color: black;
+                font-weight: bold;
+            }
+            #nextpagebutton:hover a:visited {
+                color: black;
+                font-weight: bold;
+            }
+            .invisible {
+                visibility: hidden;
+                position: fixed;
+                top: -9999px;
+            }
+            .visible {
+                visibility: visible;
+                position: static;
+            }
+            .topbuttonscontainerdiv {
+                text-align: center;
+            }
+            .topbuttonscontainerdiv a:link {
+                color: black;
+            }
+            .topbuttonscontainerdiv a:visited {
+                color: black;
+            }
+            #bottompreviousbutton {
+                background-color: #6f6c77;
+                color: black;
+                font-weight: bold;
+                font-size: 18pt;
+                border-style: solid;
+                border-color: #4b4952;
+                border-width: 10px;
+                border-radius: 10px;
+                float: center;
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            #bottompreviousbutton:hover {
+                background-color: aqua;
+                border-color: red;
+            }
+            #bottompreviousbutton:hover a:link {
+                color: black;
+                font-weight: bold;
+            }
+            #bottompreviousbutton:hover a:visited {
+                color: black;
+                font-weight: bold;
+            }
+            #causesonetext {
+                border-color: #4b4952;
+                border-style: solid;
+                border-width: 10px;
+                border-radius: 10px;
+                background-color: #00ff62;
+                text-align: center;
+                font-weight: bold;
+                font-size: 24pt;
+                letter-spacing: 3px;
+                color:black;
+            }
+            #effectsonetext {
+                border-color: #4b4952;
+                border-style: solid;
+                border-width: 10px;
+                border-radius: 10px;
+                background-color: #00ff62;
+                text-align: center;
+                font-weight: bold;
+                font-size: 24pt;
+                letter-spacing: 3px;
+                color:black;
+            }
+            #causestwotext {
+                border-color: #4b4952;
+                border-style: solid;
+                border-width: 10px;
+                border-radius: 10px;
+                background-color: #00ff62;
+                text-align: center;
+                font-weight: bold;
+                font-size: 24pt;
+                letter-spacing: 3px;
+                color:black;
+            }
+            #effectstwotext {
+                border-color: #4b4952;
+                border-style: solid;
+                border-width: 10px;
+                border-radius: 10px;
+                background-color: #00ff62;
+                text-align: center;
+                font-weight: bold;
+                font-size: 24pt;
+                letter-spacing: 3px;
+                color:black;
+            }
+            #causesonetext_small {
+                border-color: #4b4952;
+                border-style: solid;
+                border-width: 10px;
+                border-radius: 10px;
+                background-color: #00ff62;
+                text-align: center;
+                font-weight: bold;
+                font-size: 14pt;
+                letter-spacing: 3px;
+                color:black;
+            }
+            #effectsonetext_small {
+                border-color: #4b4952;
+                border-style: solid;
+                border-width: 10px;
+                border-radius: 10px;
+                background-color: #00ff62;
+                text-align: center;
+                font-weight: bold;
+                font-size: 14pt;
+                letter-spacing: 3px;
+                color:black;
+            }
+            #causestwotext_small {
+                border-color: #4b4952;
+                border-style: solid;
+                border-width: 10px;
+                border-radius: 10px;
+                background-color: #00ff62;
+                text-align: center;
+                font-weight: bold;
+                font-size: 14pt;
+                letter-spacing: 3px;
+                color:black;
+            }
+            #effectstwotext_small {
+                border-color: #4b4952;
+                border-style: solid;
+                border-width: 10px;
+                border-radius: 10px;
+                background-color: #00ff62;
+                text-align: center;
+                font-weight: bold;
+                font-size: 14pt;
+                letter-spacing: 3px;
+                color:black;
+            }
+            p {
+                text-align: center;
+            }
+            .h1headings {
+                text-align: center;
+            }
+            /* Three image containers (use 25% for four, and 50% for two, etc) */
+            .column {
+                float: left;
+                width: 50%;
+                padding: 5px;
+            }
+
+            /* Clear floats after image containers */
+            .row::after {
+                content: "";
+                clear: both;
+                display: table;
+            }
+            h1 {
+                text-align: center;
+            }
+            .actionstakenagainstdifferentgroupsboxes {
+                border-style: solid;
+                border-width: 5px;
+                border-color: white;
+                background-color: rgba(219, 223, 8, 0.664);
+                border-radius: 10px;
+            }
+        </style>
+        <script>
+            function topPageButtonsFunction() {
+                var w=window;
+                var d=document;
+                var e=d.documentElement;
+                var g=d.getElementsByTagName('body')[0];
+                var x=w.innerWidth||e.clientWidth||g.clientWidth;
+                var windowSize = x;
+                var targetWidth = 1232;
+                var targetWidthTwo = 1104;
+                var targetWidthThree = 750;
+                if ( x >= targetWidth) {     
+                //javascript for screens wider than or equal to 1232 here
+                var x = document.getElementById("toppreviousbutton");
+                x.className = "visible";
+                var x = document.getElementById("topnextbutton");
+                x.className = "visible";
+                var x = document.getElementById("nextpagebutton");
+                x.className = "invisible";
+                var x = document.getElementById("bottompreviousbutton");
+                x.className = "invisible";
+                }
+                else {
+                //javascript for screens smaller than 1232 here
+                var x = document.getElementById("toppreviousbutton");
+                x.className = "invisible";
+                var x = document.getElementById("topnextbutton");
+                x.className = "invisible";
+                var x = document.getElementById("nextpagebutton");
+                x.className = "visible";
+                var x = document.getElementById("bottompreviousbutton");
+                x.className = "visible";
+                }  
+
+                
+
+                if (windowSize >= targetWidthThree) {
+                    var x = document.getElementById("causesonetext")
+                    x.className = "visible";
+                    var x = document.getElementById("causestwotext");
+                    x.className = "visible";
+                    var x = document.getElementById("effectsonetext");
+                    x.className = "visible";
+                    var x = document.getElementById("effectstwotext");
+                    x.className = "visible";
+                    var x = document.getElementById("causesonetext_small")
+                    x.className = "invisible";
+                    var x = document.getElementById("causestwotext_small");
+                    x.className = "invisible";
+                    var x = document.getElementById("effectsonetext_small");
+                    x.className = "invisible";
+                    var x = document.getElementById("effectstwotext_small");
+                    x.className = "invisible";
+                }
+                else {
+                    var x = document.getElementById("causesonetext")
+                    x.className = "invisible";
+                    var x = document.getElementById("causestwotext");
+                    x.className = "invisible";
+                    var x = document.getElementById("effectsonetext");
+                    x.className = "invisible";
+                    var x = document.getElementById("effectstwotext");
+                    x.className = "invisible";
+                    var x = document.getElementById("causesonetext_small")
+                    x.className = "visible";
+                    var x = document.getElementById("causestwotext_small");
+                    x.className = "visible";
+                    var x = document.getElementById("effectsonetext_small");
+                    x.className = "visible";
+                    var x = document.getElementById("effectstwotext_small");
+                    x.className = "visible";
+                }
+                /*
+                var heightofgroupsaffecteddiv = document.getElementById('groupsaffected').style.getPropertyValue('height');
+                document.getElementById("jewcolumn").style.height = heightofgroupsaffecteddiv;
+                document.getElementById("germancolumn").style.height = heightofgroupsaffecteddiv;
+                document.getElementById("womencolumn").style.height = heightofgroupsaffecteddiv;
+                */
+            }
+        </script>
     </head>
-    <body>
-        <h1>Hi</h1>
-        <h1>Work ion progress!</h1>
-        <h1>The timeline here is going to be changed with a Javascript click listener, and then make the current text invisible and show new text</h1>
-        <a href="page2.html"><h1>Go back</h1></a>
+    <body onresize="topPageButtonsFunction()" onload="topPageButtonsFunction()">
+        <div class="topbuttonscontainerdiv">
+            <center>
+            <p id="bigwelcometext"><span>How the ideas and actions of people in the past have had a significant impact on people's lives.</span></p>
+            </center><br>
+            <button id="toppreviousbutton" class="invisible">
+                <a href="https://sebtheman.github.io/social-studies-assignment/page2"><span>Go to the previous page</span></a>
+            </button>
+            <button id="topnextbutton" class="invisible">
+                <a href="https://sebtheman.github.io/social-studies-assignment/loading_screen_2"><span>Go to the next page</span></a>
+            </button>
+        </div>
+        <br><br><br><br>
+        <center><span id="causesonetext" class="invisible">Main ideas of Hitler and the Nazi Party</span></center>
+        <center><span id="causesonetext_small" class="invisible">Main ideas of Hitler and the Nazi Party</span></center>
+        <div class="groupsaffected" id="groupsaffected">
+            <h1>Do this: Describe the main ideas of Hitler and the Nazi Party and connect these ideas to certain actions taken by Hitler / Nazi Party.</h1>
+            <h1>Thingy here</h1>
+        </div>
+        <br><br>
+        <center><span id="causestwotext" class="invisible">2nd cause of Nazi Party gaining power</span></center>
+        <center><span id="causestwotext_small" class="invisible">2nd cause of Nazi Party gaining power</span></center>
+        <div class="groupsaffected" id="groupsaffected">
+            <h1>Describe the actions taken by Hitler and the Nazi Party for different groups</h1>
+            <div class="actionstakenagainstdifferentgroupsboxes">
+                <h1>Test</h1>
+            </div><br>
+            <div class="row">
+                <div class="yellowcolumn"></div>
+                <div class="blackcolumn"></div>
+                <div class="yellowcolumn"></div>
+                <div class="blackcolumn"></div>
+                <div class="yellowcolumn"></div>
+                <div class="blackcolumn"></div>
+                <div class="yellowcolumn"></div>
+                <div class="blackcolumn"></div>
+                <div class="yellowcolumn"></div>
+                <div class="blackcolumn"></div>
+            </div><br>
+            <div class="actionstakenagainstdifferentgroupsboxes">
+                <h1>Test</h1>
+            </div><br>
+            <div class="row">
+                <div class="yellowcolumn"></div>
+                <div class="blackcolumn"></div>
+                <div class="yellowcolumn"></div>
+                <div class="blackcolumn"></div>
+                <div class="yellowcolumn"></div>
+                <div class="blackcolumn"></div>
+                <div class="yellowcolumn"></div>
+                <div class="blackcolumn"></div>
+                <div class="yellowcolumn"></div>
+                <div class="blackcolumn"></div>
+            </div><br>
+            <div class="actionstakenagainstdifferentgroupsboxes">
+                <h1>Test</h1>
+            </div><br>
+            <div class="row">
+                <div class="yellowcolumn"></div>
+                <div class="blackcolumn"></div>
+                <div class="yellowcolumn"></div>
+                <div class="blackcolumn"></div>
+                <div class="yellowcolumn"></div>
+                <div class="blackcolumn"></div>
+                <div class="yellowcolumn"></div>
+                <div class="blackcolumn"></div>
+                <div class="yellowcolumn"></div>
+                <div class="blackcolumn"></div>
+            </div><br>
+            <div class="actionstakenagainstdifferentgroupsboxes">
+                <h1>Test</h1>
+            </div><br>
+        </div>
+        <br><br>
+        <center><span id="effectsonetext" class="invisible">1st effect of the Nazi Party gaining power</span></center>
+        <center><span id="effectsonetext_small" class="invisible">1st effect of the Nazi Party gaining power</span></center>
+        <div class="groupsaffected" id="groupsaffected">
+            <h1>Thingy here</h1>
+        </div>
+        <br><br>
+        <center><span id="effectstwotext" class="invisible">2nd effect of the Nazi Party gaining power</span></center>
+        <center><span id="effectstwotext_small" class="invisible">2nd effect of the Nazi Party gaining power</span></center>
+        <div class="groupsaffected" id="groupsaffected">
+            <h1>Thingy here</h1>
+        </div>
+        <br><br>
+            <div class="nextpagebutton">
+                <button id="nextpagebutton" class="invisible">
+                    <a href="https://sebtheman.github.io/social-studies-assignment/loading_screen_2.html">Click here to go to the next page</a>
+                </button>
+            </div>
+            <br>
+            <button id="bottompreviousbutton" class="invisible">
+                <a href="https://sebtheman.github.io/social-studies-assignment/page2">Click here to go to the previous page</a>
+            </button>
+            <img src="images/cd3.png" width="1px" height="1px">
+            <!-- Fresh commit -->
     </body>
 </html>
