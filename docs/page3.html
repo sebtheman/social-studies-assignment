@@ -296,6 +296,35 @@
             h2 {
                 text-align: center;
             }
+            .children_hitler_actions ol {
+            max-width: 350px;
+            counter-reset: my-awesome-counter;
+            list-style: none;
+            padding-left: 40px;
+            }
+            .children_hitler_actions li {
+            margin: 0 0 0.5rem 0;
+            counter-increment: my-awesome-counter;
+            position: relative;
+            }
+            .children_hitler_actions li::before {
+            content: counter(my-awesome-counter);
+            color: #fcd000;
+            font-size: 1.5rem;
+            font-weight: bold;
+            position: absolute;
+            --size: 32px;
+            left: calc(-1 * var(--size) - 10px);
+            line-height: var(--size);
+            width: var(--size);
+            height: var(--size);
+            top: 0;
+            transform: rotate(-10deg);
+            background: black;
+            border-radius: 50%;
+            text-align: center;
+            box-shadow: 1px 1px 0 #999;
+            }
         </style>
         <script>
             function topPageButtonsFunction() {
@@ -388,9 +417,33 @@
             <div class="actionstakenagainstdifferentgroupsboxes">
                 <h1>Children</h1>
                 <h2>The actions Hitler took towards them</h2>
-                <p>Hitler took away all youth groups, such as Boy Scouts, and make it mandatory for all children to be part of the Hitler Youth instead.</p>
+                <center><div class="children_hitler_actions">
+                    <ol>
+                        <li>
+                            <p>Hitler took away all youth groups, such as Boy Scouts, and made it mandatory for all children to be part of the Hitler Youth instead.</p>
+                        </li>
+                        <li>
+                            <p>The Hitler Youth trained the boys to be soliders in war, and it trained girls to be mothers and have children.</p>
+                        </li>
+                    </ol>
+                </div></center>
                 <h2>The effects of the actions Hitler took towards them</h2>
-                <p>Write stuff here</p>
+                <center><div class="children_hitler_actions">
+                    <ol>
+                        <li>
+                            <p>Taking away the groups that the children loved would've made them sad.</p>
+                        </li>
+                        <li>
+                            <p>Some children didn't want to join the Hitler Youth. The children that didn't join the Hitler Youth got attacked, anihilated, and might possibly die. Their lives were at extreme risk.</p>
+                        </li>
+                        <li>
+                            <p>When the children died from the Hitler Youth, their friends and families were devastated because they lost a loved one.</p>
+                        </li>
+                        <li>
+                            <p>Everyone would've been scared of the government because they were killing children and people who didn't do what they were told.</p>
+                        </li>
+                    </ol>
+                </div></center>
                 <h2>How is this impact significant to them?</h2>
                 <p>Write stuff here</p>
             </div><br>
