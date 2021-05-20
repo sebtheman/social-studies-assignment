@@ -5,11 +5,28 @@
             body {
                 background-color: #00ff62;
             }
-            button {
+            .codebutton {
                 background-image: url(https://github.com/sebtheman/mechatronics-transistor-assignment/raw/master/docs/rainbow_rectangle.gif);
                 font-size: 30pt;
                 font-weight: bolder;
                 color: white;
+                border-color: #4b4952;
+                border-width: 10px;
+                border-radius: 10px;
+            }
+            #bottompreviousbutton {
+                background-color: #24d3c4;
+                color: black;
+                font-weight: bold;
+                font-size: 18pt;
+                border-style: solid;
+                border-color: #4b4952;
+                border-width: 10px;
+                border-radius: 10px;
+                float: center;
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
             }
         </style>
     </head>
@@ -18,7 +35,11 @@
         <h1>You have reached the end of Sebastian's SST Assignment</h1>
         <img src="images/celebration_emoji.png" width="400px" height="auto">
         <h1>If you want to see the code, click the link :)</h1>
-        <button><a href="https://github.com/sebtheman/social-studies-assignment/tree/main/docs">Click me</a></button>
+        <button class="codebutton"><a href="https://github.com/sebtheman/social-studies-assignment/tree/main/docs">Click me</a></button>
+        <br><br>
+        <button id="bottompreviousbutton">
+            <a href="https://sebtheman.github.io/social-studies-assignment/page5">Click here to go to the previous page</a>
+        </button>
         </center>
     </body>
 </html>
