@@ -1,10 +1,363 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <meta name="author" content="Sebastian Webster">
+        <title>Seb's SST Assignment</title>
+        <link rel="shortcut icon" type="image/jpg" href="https://github.com/sebtheman/memes-website/raw/master/docs/images/pepe.jpeg"/>
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-LWM9BCD474"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
 
+            gtag('config', 'G-LWM9BCD474');
+        </script>
+        <style>
+            body {
+                background-color: #00ff62;
+            }
+            * {
+                box-sizing: border-box;
+            }
+
+            .jewcolumn {
+                float: left;
+                width: 33.33%;
+                padding: 5px;
+                height: inherit;
+                flex: 1;
+            }
+            .germancolumn {
+                float: left;
+                width: 33.33%;
+                padding: 5px;
+                height: inherit;
+                flex: 1;
+            }
+            .womencolumn {
+                float: left;
+                width: 33.33%;
+                padding: 5px;
+                height: inherit;
+                flex: 1;
+            }
+
+            /* Clearfix (clear floats) */
+            .row::after {
+                content: "";
+                clear: both;
+                display: table;
+            }
+
+            /* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+            @media screen and (max-width: 750px) {
+                .jewcolumn {
+                    width: 100%;
+                }
+                .germancolumn {
+                    width: 100%;
+                }
+                .womencolumn {
+                    width: 100%;
+                }
+                .groupsaffected {
+                    width: 100%;
+                }
+            }
+            #bigwelcometext {
+                background-image: url(https://github.com/sebtheman/mechatronics-transistor-assignment/raw/master/docs/rainbow_rectangle.gif);
+                color: rgb(0, 0, 0);
+                font-weight: bold;
+                font-size: 20pt;
+                border-style: solid;
+                border-color: #4b4952;
+                border-width: 10px;
+                border-radius: 10px;
+                float: center;
+            }
+            #toppreviousbutton {
+                background-image: url(https://github.com/sebtheman/mechatronics-transistor-assignment/raw/master/docs/rainbow_rectangle.gif);
+                color: black;
+                font-weight: bold;
+                font-size: 20pt;
+                border-style: solid;
+                border-color: #4b4952;
+                border-width: 10px;
+                border-radius: 10px;
+                float: left;
+            }
+            #topnextbutton {
+                background-image: url(https://github.com/sebtheman/mechatronics-transistor-assignment/raw/master/docs/rainbow_rectangle.gif);
+                color: black;
+                font-weight: bold;
+                font-size: 20pt;
+                border-style: solid;
+                border-color: #4b4952;
+                border-width: 10px;
+                border-radius: 10px;
+                float: right;
+            }
+            .groupsaffected {
+                background-color: #7d7c83;
+                border-color: #4b4952;
+                border-style: solid;
+                border-width: 10px;
+                border-radius: 10px;
+                font-size: 15pt;
+                display: flex;
+                flex-direction: column;
+                height: auto;
+            }
+            .nextpagebutton {
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+                text-align: center;
+            }
+            #nextpagebutton {
+                background-color: #6f6c77;
+                color: black;
+                font-weight: bold;
+                font-size: 18pt;
+                border-style: solid;
+                border-color: #535258;
+                border-width: 10px;
+                border-radius: 10px;
+                float: center;
+            }
+            #nextpagebutton:hover {
+                background-color: aqua;
+                border-color: red;
+            }
+            a:link {
+                color: greenyellow;
+                font-weight: bold;
+            }
+            a:visited {
+                color: greenyellow;
+                font-weight: bold;
+            }
+            #nextpagebutton:hover a:link {
+                color: black;
+                font-weight: bold;
+            }
+            #nextpagebutton:hover a:visited {
+                color: black;
+                font-weight: bold;
+            }
+            .invisible {
+                visibility: hidden;
+                position: absolute;
+                top: -9999px;
+            }
+            .visible {
+                visibility: visible;
+                position: static;
+            }
+            .topbuttonscontainerdiv {
+                text-align: center;
+            }
+            .topbuttonscontainerdiv a:link {
+                color: black;
+            }
+            .topbuttonscontainerdiv a:visited {
+                color: black;
+            }
+            #bottompreviousbutton {
+                background-color: #6f6c77;
+                color: black;
+                font-weight: bold;
+                font-size: 18pt;
+                border-style: solid;
+                border-color: #4b4952;
+                border-width: 10px;
+                border-radius: 10px;
+                float: center;
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            #bottompreviousbutton:hover {
+                background-color: aqua;
+                border-color: red;
+            }
+            #bottompreviousbutton:hover a:link {
+                color: black;
+                font-weight: bold;
+            }
+            #bottompreviousbutton:hover a:visited {
+                color: black;
+                font-weight: bold;
+            }
+            p {
+                text-align: center;
+            }
+            .h1headings {
+                text-align: center;
+            }
+            /* Three image containers (use 25% for four, and 50% for two, etc) */
+            .column {
+                float: left;
+                width: 50%;
+                padding: 5px;
+            }
+
+            /* Clear floats after image containers */
+            .row::after {
+                content: "";
+                clear: both;
+                display: table;
+            }
+
+            .timeline { 
+                font-family: Helvetica; 
+                width: 90%;
+                margin: auto;
+            }
+
+
+            .timeline div {
+            border-top: 2px dashed;
+            border-color: blue !important;
+            margin:0; padding: 30px;
+            counter-increment: section;
+            position: relative;
+            }
+
+
+
+            .timeline div:nth-child(even):before {
+            content: counter(section);
+            right: 100%; 
+            margin-right: -20px;
+            position: absolute;
+            border-radius: 50%;
+            padding: 10px;
+            height: 20px;
+            width: 20px;
+            background-color: blue;
+            text-align:center;
+            color: white;
+            font-size: 110%;
+            }
+
+            .timeline div:nth-child(odd):before {
+            content: counter(section);
+            left: 100%; 
+            margin-left: -20px;
+            position: absolute;
+            border-radius: 50%;
+            padding: 10px;
+            height: 20px;
+            width: 20px;
+            background-color: blue;
+            text-align:center;
+            color: white;
+            font-size: 110%;
+            }
+
+
+
+            .timeline div:nth-child(even) {
+            border-left: 2px dashed;
+            border-top-left-radius: 30px;
+            border-bottom-left-radius: 30px;
+            margin-right: 30px; 
+            padding-right: 0;
+            }
+
+            .timeline div:nth-child(odd) {
+            border-right: 2px dashed;
+            border-top-right-radius: 30px;
+            border-bottom-right-radius: 30px;
+            margin-left: 30px; 
+            padding-left: 0;
+            }
+
+            .timeline div:first-child {
+            border-top: 0;
+            border-top-right-radius:0;
+            border-top-left-radius:0;
+            }
+
+            .timeline div:last-child {
+            border-bottom-right-radius:0;
+            border-bottom-left-radius:0;
+            }
+        </style>
+        <script>
+            function topPageButtonsFunction() {
+                var w=window;
+                var d=document;
+                var e=d.documentElement;
+                var g=d.getElementsByTagName('body')[0];
+                var x=w.innerWidth||e.clientWidth||g.clientWidth;
+                var windowSize = x;
+                var targetWidth = 1232;
+                var targetWidthTwo = 614;
+                var targetWidthThree = 750;
+                if ( x >= targetWidth) {     
+                //javascript for screens wider than or equal to 1232 here
+                var x = document.getElementById("toppreviousbutton");
+                x.className = "visible";
+                var x = document.getElementById("topnextbutton");
+                x.className = "visible";
+                }
+                else {
+                //javascript for screens smaller than 1232 here
+                var x = document.getElementById("toppreviousbutton");
+                x.className = "invisible";
+                var x = document.getElementById("topnextbutton");
+                x.className = "invisible";
+                }  
+            }
+        </script>
     </head>
-    <body>
-        <h1>Hi this website is a work in progress</h1>
-        <h1>This will eventually be the timeline :)</h1>
+    <body onresize="topPageButtonsFunction()" onload="topPageButtonsFunction()">
+        <div class="topbuttonscontainerdiv">
+            <button id="toppreviousbutton" class="invisible">
+                <a href="https://sebtheman.github.io/social-studies-assignment/page3"><span>Go to the previous page</span></a>
+            </button>
+            <span id="bigwelcometext">&nbsp;Timeline&nbsp;</span>
+            <button id="topnextbutton" class="invisible">
+                <a href="https://sebtheman.github.io/social-studies-assignment/loading_screen_4"><span>Go to the next page</span></a>
+            </button>
+        </div>
+        <br><br><br>
+        <center><span id="causesonetext" class="invisible">Significance of the Nazi Party today</span></center>
+        <center><span id="causesonetext_small" class="invisible">Significance of the Nazi Party today</span></center>
+        <div class="groupsaffected" id="groupsaffected">
+            <div class="timeline">
+                <div>
+                    <center><h1>Write stuff here</h1></center>
+                    <p>Write stuff here</p>
+                </div>
+                <div>
+                    <center><h1>Write stuff here</h1></center>
+                    <p>Write stuff here</p>
+                </div>
+                <div>
+                    <center><h1>Write stuff here</h1></center>
+                    <p>Write stuff here</p>
+                </div>
+                <div>
+                    <center><h1>Write stuff here</h1></center>
+                    <p>Write stuff here</p>
+                </div>
+            </div>
+        </div>
+        <br>
+            <div class="nextpagebutton">
+                <button id="nextpagebutton">
+                    <a href="https://sebtheman.github.io/social-studies-assignment/loading_screen_4.html">Click here to go to the next page</a>
+                </button>
+            </div>
+            <br>
+            <button id="bottompreviousbutton">
+                <a href="https://sebtheman.github.io/social-studies-assignment/page3">Click here to go to the previous page</a>
+            </button>
+            <img src="images/cd3.png" width="1px" height="1px">
+            <!-- Fresh commit -->
     </body>
 </html>
