@@ -212,7 +212,7 @@
 
             .timeline { 
                 font-family: Helvetica; 
-                width: 90%;
+                max-width: 800px;
                 margin: auto;
             }
 
@@ -285,6 +285,35 @@
             border-bottom-right-radius:0;
             border-bottom-left-radius:0;
             }
+            .timeline ol {
+            max-width: 400px;
+            counter-reset: my-awesome-counter;
+            list-style: none;
+            padding-left: 40px;
+            }
+            .timeline li {
+            margin: 0 0 0.5rem 0;
+            counter-increment: my-awesome-counter;
+            position: relative;
+            }
+            .timeline li::before {
+            content: counter(my-awesome-counter);
+            color: #fcd000;
+            font-size: 1.5rem;
+            font-weight: bold;
+            position: absolute;
+            --size: 36px;
+            left: calc(-1 * var(--size) - 10px);
+            line-height: var(--size);
+            width: var(--size);
+            height: var(--size);
+            top: 0;
+            transform: rotate(-10deg);
+            background: black;
+            border-radius: 50%;
+            text-align: center;
+            box-shadow: 1px 1px 0 #999;
+            }
         </style>
         <script>
             function topPageButtonsFunction() {
@@ -325,10 +354,144 @@
             </button>
         </div>
         <br><br><br>
-        <center><span id="causesonetext" class="invisible">Significance of the Nazi Party today</span></center>
+        <center><span id="causesonetext" class="invisible">Timeline</span></center>
         <center><span id="causesonetext_small" class="invisible">Significance of the Nazi Party today</span></center>
         <div class="groupsaffected" id="groupsaffected">
             <div class="timeline">
+                <div>
+                    <center><h1>January 30th 1933</h1></center>
+                    <p>Hitler got appointed as chancelor</p>
+                    <center>
+                        <img src="images/hitler_1.jpeg" width="300px" height="auto">
+                        <img src="images/hitler_2.jpeg" width="300px" height="auto">
+                    </center>
+                </div>
+                <div>
+                    <center><h1>April 1st 1933</h1></center>
+                    <p>Hitler starts advicing people not to shop at Jewish stores or businesses</p>
+                    <center>
+                        <img src="images/stop_sign.png" width="300px" height="auto">
+                    </center>
+                </div>
+                <div>
+                    <center><h1>May 10th 1933</h1></center>
+                    <p>The Nazi party starts buring Jewish books and Jewish related things</p>
+                    <center>
+                        <img src="images/books_burning.gif" width="300px" height="auto">
+                    </center>
+                </div>
+                <div>
+                    <center><h1>July 14th 1933</h1></center>
+                    <p>East European Jewish Immigrants lose their German citizenship</p>
+                    <center>
+                        <img src="images/denied.jpeg" width="300px" height="auto">
+                    </center>
+                </div>
+                <div>
+                    <center><h1>August 2nd 1944</h1></center>
+                    <p>Hitler is now leader of Germany</p>
+                    <center>
+                        <img src="images/htiler_salute.gif" width="300px" height="auto">
+                    </center>
+                </div>
+                <div>
+                    <center><h1>May 31st 1935</h1></center>
+                    <p>Jews are no longer allowed to serve in the German military</p>
+                    <center>
+                        <img src="images/rejected.png" width="300px" height="auto">
+                    </center>
+                </div>
+                <div>
+                    <center><h1>September 15th 1935</h1></center>
+                    <p>Nuremburg laws (Anti-sematism laws) have now been passed. Jews are no longer considered German citizens, Jews are not allowed to marry Aaryans, and also they're also not allowed to fly the German flag</p>
+                    <center>
+                        <img src="images/red_x.png" width="300px" height="auto">
+                        <img src="images/1200px-Star_of_David.svg.png" width="300px" height="auto">
+                    </center>
+                </div>
+                <div>
+                    <center><h1>March 3rd 1936</h1></center>
+                    <p>Jewish doctors are no longer allowed to study in German institutions</p>
+                </div>
+                <div>
+                    <center><h1>November 9th and 10th 1938</h1></center>
+                    <p>Kristallnacht (Night of Broken Glass) has begun. Some of the things that happened on the Night of Broken glass are...</p>
+                    <ol>
+                        <li>
+                            <p>200 Synagogues were destroyed</p>
+                        </li>
+                        <li>
+                            <p>7,500 Jewish shops looted</p>
+                        </li>
+                        <li>
+                            <p>30,000 male Jews were sent to concentration camps</p>
+                        </li>
+                    </ol>
+                </div>
+                <div>
+                    <center><h1>November 12th 1938</h1></center>
+                    <p>A law passes forcing Jews to hand their businesses over to Aaryans</p>
+                </div>
+                <div>
+                    <center><h1>November 15th 1938</h1></center>
+                    <p>All Jewish students are expelled from schools</p>
+                    <center>
+                        <img src="images/red_x.png" width="300px" height="auto">
+                        <img src="images/school.png" width="300px" height="auto">
+                    </center>
+                </div>
+                <div>
+                    <center><h1>December 12th 1938</h1></center>
+                    <p>1 billion mark <a href="https://coinmill.com/DEM_NZD.html"><i>($863,013,835.27 NZD)</i></a> fine given to German Jews for destruction of property during the Kristallnacht</p>
+                    <center>
+                        <img src="images/gold_dollar_sign.png" width="300px" height="auto">
+                    </center>
+                </div>
+                <div>
+                    <center><h1>September 1st 1939</h1>
+                    <h3 style="color: red;"><i><span style="background-color:black;">World War 2 starts. Germany invades Poland</span></i></h3>
+                    </center>
+                </div>
+                <div>
+                    <center><h1>Write stuff here</h1></center>
+                    <p>Write stuff here</p>
+                </div>
+                <div>
+                    <center><h1>Write stuff here</h1></center>
+                    <p>Write stuff here</p>
+                </div>
+                <div>
+                    <center><h1>Write stuff here</h1></center>
+                    <p>Write stuff here</p>
+                </div>
+                <div>
+                    <center><h1>Write stuff here</h1></center>
+                    <p>Write stuff here</p>
+                </div>
+                <div>
+                    <center><h1>Write stuff here</h1></center>
+                    <p>Write stuff here</p>
+                </div>
+                <div>
+                    <center><h1>Write stuff here</h1></center>
+                    <p>Write stuff here</p>
+                </div>
+                <div>
+                    <center><h1>Write stuff here</h1></center>
+                    <p>Write stuff here</p>
+                </div>
+                <div>
+                    <center><h1>Write stuff here</h1></center>
+                    <p>Write stuff here</p>
+                </div>
+                <div>
+                    <center><h1>Write stuff here</h1></center>
+                    <p>Write stuff here</p>
+                </div>
+                <div>
+                    <center><h1>Write stuff here</h1></center>
+                    <p>Write stuff here</p>
+                </div>
                 <div>
                     <center><h1>Write stuff here</h1></center>
                     <p>Write stuff here</p>
