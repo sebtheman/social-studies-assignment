@@ -244,7 +244,7 @@
                 display: table;
             }
             ol {
-            max-width: 400px;
+                max-width: 400px;
             counter-reset: my-awesome-counter;
             list-style: none;
             padding-left: 40px;
@@ -272,6 +272,84 @@
             text-align: center;
             box-shadow: 1px 1px 0 #999;
             }
+            .floatrightdiv {
+                float: right;
+            }
+            .boredomreppelant {
+                visibility: visible;
+                position: fixed;
+                bottom: 18px;
+                left: 18px;
+            }
+            .switchforboredom {
+                position: fixed;
+                bottom: 220px;
+                left: 80px;
+            }
+            .switchforboredom_off {
+                position: fixed;
+                bottom: 18px;
+                left: 80px;
+            }
+            .switch {
+            position: relative;
+            display: inline-block;
+            width: 60px;
+            height: 34px;
+            }
+
+            .switch input { 
+            opacity: 0;
+            width: 0;
+            height: 0;
+            }
+
+            .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            -webkit-transition: .4s;
+            transition: .4s;
+            }
+
+            .slider:before {
+            position: absolute;
+            content: "";
+            height: 26px;
+            width: 26px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            -webkit-transition: .4s;
+            transition: .4s;
+            }
+
+            input:checked + .slider {
+            background-color: #2196F3;
+            }
+
+            input:focus + .slider {
+            box-shadow: 0 0 1px #2196F3;
+            }
+
+            input:checked + .slider:before {
+            -webkit-transform: translateX(26px);
+            -ms-transform: translateX(26px);
+            transform: translateX(26px);
+            }
+
+            /* Rounded sliders */
+            .slider.round {
+            border-radius: 34px;
+            }
+
+            .slider.round:before {
+            border-radius: 50%;
+            }
         </style>
         <script>
             function topPageButtonsFunction() {
@@ -284,6 +362,7 @@
                 var targetWidth = 1232;
                 var targetWidthTwo = 614;
                 var targetWidthThree = 750;
+                var targetWidthFour = 1128;
                 if ( x >= targetWidth) {     
                 //javascript for screens wider than or equal to 1232 here
                 var x = document.getElementById("toppreviousbutton");
@@ -313,16 +392,33 @@
                 }
 
                 if (windowSize >= targetWidthThree) {
-                    var x = document.getElementById("causesonetext")
+                    var x = document.getElementById("causesonetext");
                     x.className = "visible";
-                    var x = document.getElementById("causesonetext_small")
+                    var x = document.getElementById("causesonetext_small");
                     x.className = "invisible";
                 }
                 else {
-                    var x = document.getElementById("causesonetext")
+                    var x = document.getElementById("causesonetext");
                     x.className = "invisible";
-                    var x = document.getElementById("causesonetext_small")
+                    var x = document.getElementById("causesonetext_small");
                     x.className = "visible";
+                }
+
+                if (windowSize >= targetWidthFour) {
+                    var x = document.getElementById('switchforboredomdiv');
+                    var y = document.getElementById('boredomreppelant');
+                    var z = document.getElementById('boredomrepellanttext');
+                    x.className = "switchforboredom";
+                    y.className = "boredomreppelant";
+                    z.className = "visible"
+                }
+                else {
+                    var x = document.getElementById('switchforboredomdiv');
+                    var y = document.getElementById('boredomreppelant');
+                    var z = document.getElementById('boredomrepellanttext');
+                    x.className = "invisible";
+                    y.className = "invisible";
+                    z.className = "invisible"
                 }
                 /*
                 var heightofgroupsaffecteddiv = document.getElementById('groupsaffected').style.getPropertyValue('height');
@@ -334,29 +430,33 @@
         </script>
     </head>
     <body onresize="topPageButtonsFunction()" onload="topPageButtonsFunction()">
-        <style>
-            .illgetridofthislater a {
-                color: black;
-            }
-            .illgetridofthislater a:visited {
-                color: black;
-            }
-        </style>
         <div class="topbuttonscontainerdiv">
-            <button id="toppreviousbutton" class="invisible">
+            <button id="toppreviousbutton">
                 <a href="https://sebtheman.github.io/social-studies-assignment/page3"><span>Go to the previous page</span></a>
             </button>
-            <span id="bigwelcometext" class="invisible">Significance of the Nazi Party today</span>
+            <span id="bigwelcometext">Significance of the Nazi Party today</span>
             <span id="smallwelcometext" class="invisible">Significance of the Nazi Party today</span>
-            <button id="topnextbutton" class="invisible">
+            <button id="topnextbutton">
                 <a href="https://sebtheman.github.io/social-studies-assignment/loading_screen_4"><span>Go to the next page</span></a>
             </button>
         </div>
         <br><br>
-        <center><span id="causesonetext" class="invisible">Significance of the Nazi party today</span></center>
+        <center><span id="causesonetext">Significance of the Nazi party today</span></center>
         <center><span id="causesonetext_small" class="invisible">Significance of the Nazi party today</span></center>
+        <img src="images/boredom_repellant.gif" class="boredomreppelant" id="boredomreppelant">
+        <div class="switchforboredom" id="switchforboredomdiv">
+            <label class="switch">
+                <input type="checkbox" id="repellant_switch">
+                <span class="slider round"></span>
+            </label>
+        </div>
         <div class="groupsaffected" id="groupsaffected">
-            <h1 style="text-align: center;">Declaration of Human Rights</h1>
+            <br>
+            <h1 style="text-align: center;margin: 0;">Declaration of Human Rights</h1>
+            <div id="boredomrepellanttext">
+                <h2 style="text-align: center;margin: 0;color: #fcd000;">Boredom repellant is on the left if you need it :)</h2>
+                <h3 style="text-align: center;margin: 0;color: #fcd000;">You can turn it on/off with the switch on top of it</h3>
+            </div>
             <p>The declaration of human rights is a document that gives every single human being rights and equality, protecting the rights of people everywhere.</p>
             <p>The declaration of human rights was adopted on the 10th of December in 1948. It became a thing because of the effects of World War 2.</p>
             <p>Work on the Declaration of Human Rights started in 1946. People from all around the world contributed to the writing of the document.</p>
@@ -550,8 +650,6 @@
                 </li><br>
             </ol>
             </center>
-        </div>
-        <br>
             <div class="nextpagebutton">
                 <button id="nextpagebutton">
                     <a href="https://sebtheman.github.io/social-studies-assignment/loading_screen_4.html">Click here to go to the next page</a>
@@ -560,7 +658,34 @@
             <br>
             <button id="bottompreviousbutton">
                 <a href="https://sebtheman.github.io/social-studies-assignment/page3">Click here to go to the previous page</a>
-            </button>
+            </button><br>
+        </div>
             <!-- Fresh commit -->
+        <script>
+            window.onload = function() {
+                var x = document.getElementById('repellant_switch');
+                var y = document.getElementById('boredomreppelant');
+                var z = document.getElementById('switchforboredomdiv');
+                x.checked = true;
+                y.className = "boredomreppelant";
+                z.className = "switchforboredom";
+            };
+            document.getElementById('repellant_switch').addEventListener('click', function() {
+            var x = document.getElementById('repellant_switch');
+            var y = document.getElementById('boredomreppelant');
+            var z = document.getElementById('switchforboredomdiv');
+            var ischeckboxchecked = x.checked;
+            if (x.checked == true) {
+                console.log("The if statement says the checkbox is checked");
+                y.className = "boredomreppelant";
+                z.className = "switchforboredom";
+            }
+            else {
+                console.log("The if statement says the checkbox is not checked");
+                y.className = "invisible";
+                z.className = "switchforboredom_off"
+            }
+        });
+        </script>
     </body>
 </html>
